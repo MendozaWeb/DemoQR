@@ -14,7 +14,7 @@
     <style>
         body {
 
-             background-image: url(img/fondo.jpg);
+            background-image: url(img/fondo.jpg);
 
 
         }
@@ -30,7 +30,6 @@
                 background-image: url(img/fondo.jpg);
 
             }
-
     </style>
     <div class="container">
 
@@ -66,7 +65,7 @@
 
                 <form onsubmit="generate();return false;">
                     <br>
-                    <input type="text" id="qr" class="form-control" name="" placeholder="Ingrese un texto">
+                    <input type="text" id="qr" class="form-control" name="" placeholder="Ingrese un texto o URL">
                     <br>
                 </form>
 
@@ -76,8 +75,8 @@
 
                 <script type="text/javascript">
                     var qrcode = new QRCode(document.getElementById('qrResult'), {
-                        width: 100,
-                        height: 100
+                        width: 250, //pixeles
+                        height: 250
                     });
 
                     function generate() {
@@ -90,14 +89,15 @@
 
                         qrcode.makeCode(message.value);
                     }
-
                 </script>
 
                 <br>
                 <br>
                 <br>
                 <br>
-
+                <br>
+                <br>
+                <br>
                 <!--Bonton-->
                 <input type="file" id="file" name="file" class="btn btn-primary mb-2">
 
@@ -110,6 +110,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</body></html>
