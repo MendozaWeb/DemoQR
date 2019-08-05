@@ -3,7 +3,7 @@
 
 <head>
     <title></title>
-
+    <link rel="stylesheet" ref="">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -11,6 +11,27 @@
 </head>
 
 <body>
+    <style>
+        body {
+
+             background-image: url(img/fondo.jpg);
+
+
+        }
+
+        .h1 {
+            color: aliceblue;
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            body {
+
+                background-image: url(img/fondo.jpg);
+
+            }
+
+    </style>
     <div class="container">
 
         <ul class="nav nav-pills">
@@ -42,10 +63,10 @@
 
             <div class="form-group mx-sm-3 mb-2">
                 <h1 class="h1">Genererar Codigo QR</h1>
-                
+
                 <form onsubmit="generate();return false;">
-                    <br>Ingrese un texto.
-                    <input type="text" id="qr" class="form-control" name="">
+                    <br>
+                    <input type="text" id="qr" class="form-control" name="" placeholder="Ingrese un texto">
                     <br>
                 </form>
 
@@ -69,6 +90,7 @@
 
                         qrcode.makeCode(message.value);
                     }
+
                 </script>
 
                 <br>
@@ -88,4 +110,6 @@
             </div>
         </div>
     </div>
-</body></html>
+</body>
+
+</html>
