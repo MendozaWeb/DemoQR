@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Datos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Datos2</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="form-group mx-sm-3 mb-2">
+                <h1 class="h1">Genererar Codigo QR</h1>
+                
+                <form onsubmit="generate();return false;">
+                    <br>Ingrese un texto.
+                    <input type="text" id="qr" class="form-control" name="">
+                    <br>
+                </form>
+
+                <div id="qrResult" style="height: 100px;width: 100px">
+
+                </div>
+
+                <script type="text/javascript">
+                    var qrcode = new QRCode(document.getElementById('qrResult'), {
+                        width: 100,
+                        height: 100
+                    });
+
+                    function generate() {
+                        var message = document.getElementById('qr');
+                        if (!message.value) {
+                            alert("Input a text");
+                            message.focus();
+                            return;
+                        }
+
+                        qrcode.makeCode(message.value);
+                    }
+                </script>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <!--Bonton-->
+                <input type="file" id="file" name="file" class="btn btn-primary mb-2">
+
+                <p class="form-control">Qr Content: <span id="content"></span></p>
+
+
+
+                <!--To Read QR Code-->
+                <script type="text/javascript" src="js/qrReader.js"></script>
+            </div>
+        </div>
+    </div>
+</body></html>
